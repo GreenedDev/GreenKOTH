@@ -1,0 +1,50 @@
+#add the "$" symbol at the beginning of message to use MiniMessage format
+
+only-player-command: "&cThis command can be only executed by a player!"
+
+command-usage: "&cUsage: /%command%"
+
+no-perm: "&cYou don't have a permission to execute this command!"
+
+update-available: "&6[GreenKOTH] &aAn update &6%newversion% &afor the GreenKOTH plugin is now available. Download it from &bhttps://www.spigotmc.org/resources/114685/"
+admin:
+  reload:
+    all-config-reloaded: "&aTop Areas, Language and default config has been reloaded!"
+  help:
+    - "&aGreenKOTH Admin Commands:"
+    - "&e/greenkoth &7- &bDisplays this message."
+    - "&e/greenkoth createarea <areaName> &7- &bCreate the KOTH Top area."
+    - "&e/greenkoth setareapos <areaName> pos<1/2> &7- &bSet the area's corner points."
+    - "&e/greenkoth deletearea &7- &bDelete area with the specific name."
+    - "&e/greenkoth reload &7- &bReload the configuration."
+  area-list:
+    meaning: "&aGreen &7- &2Active &f| &4RED &7- &cInactive"
+    #minimessage
+    list-format:
+      inactive: "$<gray>-</gray> <red>%area%</red> <gray>(</gray><color:#00f299><click:run_command:'/greenkoth setareapos %area% pos1'><hover:show_text:'<blue>Click to set pos1!</blue>'>Set Pos1</hover></click></color><gray>)</gray> <gray>(</gray><color:#00f299><click:run_command:'/greenkoth setareapos %area% pos2'><hover:show_text:'<color:#cc00cc>Click to set pos2!</color>'>Set Pos2</hover></click></color><gray>)</gray> <gray>(</gray><color:#ff1900><click:run_command:'/greenkoth deletearea %area%'><hover:show_text:'<aqua>Click to delete!</aqua>'>Delete</hover></click></color><gray>)</gray>"
+      active: "$<gray>-</gray> <green>%area%</green> <gray>(</gray><color:#00f299><click:run_command:'/greenkoth setareapos %area% pos1'><hover:show_text:'<blue>Click to set pos1!</blue>'>Set Pos1</hover></click></color><gray>)</gray> <gray>(</gray><color:#00f299><click:run_command:'/greenkoth setareapos %area% pos2'><hover:show_text:'<color:#cc00cc>Click to set pos2!</color>'>Set Pos2</hover></click></color><gray>)</gray> <gray>(</gray><color:#ff1900><click:run_command:'/greenkoth deletearea %area%'><hover:show_text:'<aqua>Click to delete!</aqua>'>Delete</hover></click></color><gray>)</gray>"
+    list: "&aList of the areas:"
+    no-areas-available: "&cCurrently, there are no arenas available."
+  set-pos:
+    success: "&b%pos% &asuccessfully set!"
+    area-loaded: "&aYou have successfully completed the area setup. &6Area has been loaded."
+    wrong-area: "&cThe area with that name doesn't exist. Please create one with &6/greenkoth createarea <name>"
+    wrong-pos: "&cWrong position in the command. You need to type pos1 or pos2. (pos1 for one player's position, pos2 for second player's position)"
+  create-area:
+    already-exists: "&cThe area with that name already exists. If you want to modify it's positions type &6/greenkoth setareapos&c. If you want to create new area type &6/greenkoth createarea <name>&c."
+    success: "&aArea &b%area%&a has been successfully created! To set it's positions try &6/greenkoth setareapos"
+  delete-area:
+    doesnt-exists: "&cArea with that name doesn't exist."
+    success: "&aArea &6%area%&a has been successfully deleted!"
+  set-spawn:
+    success: "&aSpawn location has been set successfully!"
+koth:
+  #message broadcasted when someone wins. leave this as "someone-won: []" to disable this feature.
+  someone-won:
+    - "&7-------------------------"
+    - "&6%player% &ahas won the &bKOTH!"
+    - "&7-------------------------"
+  you-won:
+    - "&7-------------------------"
+    - "&6You have won the &bKOTH"
+    - "&7-------------------------"

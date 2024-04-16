@@ -1,0 +1,9 @@
+name: GreenKOTH
+version: '${version}'
+main: net.multylands.koth.GreenKOTH
+api-version: '1.20'
+commands:
+  greenkoth:
+    aliases:
+      - kothgreen
+    description: Various admin commands.
